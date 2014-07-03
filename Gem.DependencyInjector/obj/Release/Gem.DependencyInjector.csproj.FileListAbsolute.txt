@@ -1,0 +1,6 @@
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector\bin\Release\Gem.DependencyInjector.dll
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector\bin\Release\Gem.DependencyInjector.pdb
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector\bin\Release\System.dll
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector\obj\Release\Gem.DependencyInjector.csprojResolveAssemblyReference.cache
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector\obj\Release\Gem.DependencyInjector.dll
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector\obj\Release\Gem.DependencyInjector.pdb

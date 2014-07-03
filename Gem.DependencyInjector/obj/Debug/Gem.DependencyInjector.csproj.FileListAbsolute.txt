@@ -1,0 +1,8 @@
+C:\aquiloz\awpp\Aquiloz.Web.Application\bin\Gem.DependencyInjector.dll
+C:\aquiloz\awpp\Aquiloz.Web.Application\bin\Gem.DependencyInjector.pdb
+C:\aquiloz\awpp\Gem.DependencyInjector\obj\Debug\Gem.DependencyInjector.dll
+C:\aquiloz\awpp\Gem.DependencyInjector\obj\Debug\Gem.DependencyInjector.pdb
+C:\aquiloz\awpp\DependencyInjector\Aquiloz.Web.Application\bin\Gem.DependencyInjector.dll
+C:\aquiloz\awpp\DependencyInjector\Aquiloz.Web.Application\bin\Gem.DependencyInjector.pdb
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector\obj\Debug\Gem.DependencyInjector.dll
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector\obj\Debug\Gem.DependencyInjector.pdb

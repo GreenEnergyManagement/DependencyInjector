@@ -1,0 +1,12 @@
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector.Test\bin\Release\Gem.DependencyInjector.Test.dll
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector.Test\bin\Release\Gem.DependencyInjector.Test.pdb
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector.Test\bin\Release\Gem.DependencyInjector.dll
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector.Test\bin\Release\log4net.dll
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector.Test\bin\Release\nunit.framework.dll
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector.Test\bin\Release\System.dll
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector.Test\bin\Release\Gem.DependencyInjector.pdb
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector.Test\bin\Release\log4net.xml
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector.Test\bin\Release\nunit.framework.xml
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector.Test\obj\Release\Gem.DependencyInjector.Test.csprojResolveAssemblyReference.cache
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector.Test\obj\Release\Gem.DependencyInjector.Test.dll
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector.Test\obj\Release\Gem.DependencyInjector.Test.pdb

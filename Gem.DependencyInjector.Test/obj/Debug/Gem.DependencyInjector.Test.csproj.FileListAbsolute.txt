@@ -1,0 +1,10 @@
+C:\bin\debug\Gem.DependencyInjector.Test.dll
+C:\bin\debug\Gem.DependencyInjector.Test.pdb
+C:\aquiloz\awpp\Gem.DependencyInjector.Test\obj\Debug\Gem.DependencyInjector.Test.csprojResolveAssemblyReference.cache
+C:\aquiloz\awpp\Gem.DependencyInjector.Test\obj\Debug\Gem.DependencyInjector.Test.dll
+C:\aquiloz\awpp\Gem.DependencyInjector.Test\obj\Debug\Gem.DependencyInjector.Test.pdb
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector.Test\obj\Debug\Gem.DependencyInjector.Test.csprojResolveAssemblyReference.cache
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector.Test\obj\Debug\Gem.DependencyInjector.Test.dll
+C:\aquiloz\awpp\DependencyInjector\Gem.DependencyInjector.Test\obj\Debug\Gem.DependencyInjector.Test.pdb
+C:\aquiloz\bin\debug\Gem.DependencyInjector.Test.dll
+C:\aquiloz\bin\debug\Gem.DependencyInjector.Test.pdb

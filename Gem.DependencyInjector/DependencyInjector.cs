@@ -108,13 +108,14 @@ namespace Gem.DependencyInjector
         private void Configure()
         {
             DefinitionMetaData[] sortedDependencies = ParallelQuickSort.Sort(new List<DefinitionMetaData>(metaMap.Values).ToArray());
-            List<int> unresolvedIndexes = new List<int>();
+            var unresolvedIndexes = new List<int>();
+            var unresolvedIndexMap = new Dictionary<int, MissingDependency>();
 
             for (int i = 0; i < sortedDependencies.Length; i++)
             {
                 DefinitionMetaData def = sortedDependencies[i];
 
-                InstantiateDefinition(i, unresolvedIndexes, def);
+                InstantiateDefinition(i, unresolvedIndexes, unresolvedIndexMap, def);
             }
 
             for (int i = 0; i < 20; i++)
@@ -124,19 +125,22 @@ namespace Gem.DependencyInjector
                 {
                     int unresolvedIndex = unresolvedIndexes[0];
                     unresolvedIndexes.RemoveAt(0);
+                    unresolvedIndexMap.Remove(unresolvedIndex);
                     DefinitionMetaData def = sortedDependencies[unresolvedIndex];
-                    InstantiateDefinition(unresolvedIndex, unresolvedIndexes, def);
+                    InstantiateDefinition(unresolvedIndex, unresolvedIndexes, unresolvedIndexMap, def);
                 }
                 else break;
             }
 
-            DependencyInjectorConfigurationException ex = HandleUnresolvedDefinitions(sortedDependencies, unresolvedIndexes);
+            DependencyInjectorConfigurationException ex = HandleUnresolvedDefinitions(sortedDependencies, unresolvedIndexes, unresolvedIndexMap);
             if (ex != null) throw ex;
             metaMap.Clear();
         }
 
-        protected virtual void InstantiateDefinition(int i, List<int> unresolvedIndexes, DefinitionMetaData def)
+        protected virtual void InstantiateDefinition(int i, List<int> unresolvedIndexes, Dictionary<int, MissingDependency> unresolvedIndexMap, DefinitionMetaData def)
         {
+            //if (map.ContainsKey(def.Id)) { return; }
+
             bool canInstantiate = true;
             List<object> arguments = new List<object>(def.Parameters.Count);
             foreach (Type paramType in def.Parameters)
@@ -150,6 +154,7 @@ namespace Gem.DependencyInjector
                 {
                     canInstantiate = false;
                     unresolvedIndexes.Add(i);
+                    unresolvedIndexMap.Add(i, new MissingDependency(i, "Cannot find missing dependency: ["+paramType.FullName+"]"));
                     break;
                 }
             }
@@ -180,15 +185,15 @@ namespace Gem.DependencyInjector
             }
         }
 
-        private DependencyInjectorConfigurationException HandleUnresolvedDefinitions(DefinitionMetaData[] sortedDependencies, List<int> unresolvedIndexes)
+        private DependencyInjectorConfigurationException HandleUnresolvedDefinitions(DefinitionMetaData[] sortedDependencies, List<int> unresolvedIndexes, Dictionary<int, MissingDependency> unresolvedIndexMap)
         {
             if (unresolvedIndexes.Count > 0)
             {
                 StringBuilder builder = new StringBuilder();
                 builder.AppendLine("Unable to resolve object definitions identified as: ");
-                foreach (int i in unresolvedIndexes)
+                foreach (int unresolvedIndex in unresolvedIndexes)
                 {
-                    builder.AppendLine(sortedDependencies[i].Id);
+                    builder.AppendLine(sortedDependencies[unresolvedIndex].Id + " => " + unresolvedIndexMap[unresolvedIndex].Dependency);
                 }
 
                 return new DependencyInjectorConfigurationException(builder.ToString());
@@ -342,6 +347,23 @@ namespace Gem.DependencyInjector
             map.Clear();
             instanceTypeKeyMap.Clear();
             returnTypeKeyMap.Clear();
+        }
+    }
+
+    public class MissingDependency
+    {
+        public readonly int Index;
+        public readonly string Dependency;
+
+        public MissingDependency(int index, string dependency)
+        {
+            Index = index;
+            Dependency = dependency;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Index: {0}, Missing Dependency: {1}", Index, Dependency);
         }
     }
 }
